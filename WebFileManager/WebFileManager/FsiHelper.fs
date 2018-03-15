@@ -22,7 +22,7 @@ type FsiHelper() =
     let fsiSession = FsiEvaluationSession.Create(fsiConfig, allArgs, inStream, Console.Out, Console.Error)
 
     member this.SendToFsi(code: string) =
-        fsiSession.EvalInteraction(code)
+        //fsiSession.EvalInteraction(code)
         let result, warnings = fsiSession.EvalInteractionNonThrowing code
 
         // show the result

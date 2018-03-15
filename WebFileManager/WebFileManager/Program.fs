@@ -13,5 +13,6 @@ let main argv =
     let fsiHelper = new FsiHelper()
     let fileProcessor = new FileProcessor(folderPath, startupPath, fsiHelper.SendToFsi)
     fileProcessor.DoWatch()
+    
     Console.ReadLine() |> ignore
     0 // return an integer exit code

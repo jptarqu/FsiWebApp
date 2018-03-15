@@ -9,7 +9,9 @@ type FileProcessor(projFolderPath: string, startFilePath: string, fsiSender: Fsi
     let firstFileContents =  File.ReadAllText(startFilePath)
     
     do 
-        fsiSender "1 + 1" //firstFileContents
-    
+        fsiSender ("# silentCd @\"" +  projFolderPath + "\";;")
+        fsiSender ("# 1 @\"" +  startFilePath + "\";;")
+        fsiSender firstFileContents
+        fsiSender "StartSuave();;"
 
     member this.DoWatch() = ()
